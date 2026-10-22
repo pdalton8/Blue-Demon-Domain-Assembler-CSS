@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blue Demon Domain | Part Class Reference</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; color: #222529; background: #f8f9fa; font: 16px/1.55 Arial, sans-serif; }
+    header { padding: 2rem 1.5rem; color: white; background: #00205b; }
+    header > div, main { max-width: 1100px; margin: auto; }
+    main { padding: 1.5rem; }
+    h1 { margin: 0 0 .5rem; font-size: 2rem; }
+    h2 { margin: 0 0 1rem; color: #00205b; font-size: 1.4rem; }
+    header p { margin: 0; }
+    section { margin-bottom: 1.5rem; padding: 1.5rem; background: white; border: 1px solid #dee2e6; border-radius: 0 1rem 0 1rem; }
+    a { color: #003da5; text-underline-offset: .15em; }
+    a:focus-visible { outline: 3px solid #003da5; outline-offset: 3px; }
+    nav { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; margin: 1rem 0 1.5rem; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+    th, td { padding: .7rem .8rem; text-align: left; vertical-align: top; border-bottom: 1px solid #dee2e6; }
+    th { color: white; background: #00205b; }
+    tbody tr:nth-child(even) { background: #f8f9fa; }
+    code { color: #003da5; font: .9em/1.5 Consolas, monospace; overflow-wrap: anywhere; }
+    pre { padding: 1rem; overflow-x: auto; background: #f1f3f5; border: 1px solid #dee2e6; }
+    pre code { color: #222529; }
+    .note { padding: .8rem 1rem; background: #e5ecf6; border-left: 4px solid #003da5; }
+    section > :last-child { margin-bottom: 0; }
+    @media (max-width: 600px) { main { padding: .75rem; } section { padding: 1rem; } h1 { font-size: 1.65rem; } }
+    @media print {
+      body { background: white; font-size: 10pt; }
+      header { padding: 0; color: #00205b; background: white; }
+      main { max-width: none; padding: 0; }
+      nav { display: none; }
+      section { padding: 1rem 0; border: 0; }
+      .table-wrap { overflow: visible; }
+      thead { display: table-header-group; }
+      tr, pre { break-inside: avoid; }
+      th { color: #00205b; background: #eee; }
+    }
+  </style>
+</head>
+<body>
+  <header><div><h1>Blue Demon Domain: part class reference</h1><p>A simple guide to placing and styling Slate parts.</p></div></header>
+  <main>
+    <p>Enter class names <strong>without dots</strong>, separated by spaces. Visual reference: <a href="transfer-astrophysics_files/bdd-mockup-master.html">bdd-mockup-master.html</a>.</p>
+    <p>The master uses the older assembler. This guide describes the current <a href="portal-global-assets-part.html">Global Assets</a> and <a href="portal-assembler-part.html">Assembler</a>. <a href="portal-part-class-reference.md">Markdown version</a>.</p>
+    <nav aria-label="Reference sections"><a href="#placement">Placement</a><a href="#appearance">Appearance</a><a href="#combinations">Class combinations</a><a href="#ribbon">Above-hero bar</a><a href="#components">HTML components</a><a href="#automatic">Automatic effects</a></nav>
+    <section id="placement">
+      <h2>1. Placement: Slate CSS Classes field</h2>
+      <p>Choose one placement per part. Placement does not automatically apply a message or action-card appearance.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th scope="col">Class</th><th scope="col">Where it goes</th><th scope="col">Matching master element</th></tr></thead>
+        <tbody>
+          <tr><td><code>portal-slot--navigation</code></td><td>Navigation at the top</td><td>DePaul / Blue Demon Domain navbar</td></tr>
+          <tr><td><code>portal-ribbon-part</code></td><td>Below navigation, above hero</td><td>Scheduled maintenance bar</td></tr>
+          <tr><td><code>portal-slot--hero</code></td><td>Above all content sections</td><td>Welcome back / Your path to DePaul</td></tr>
+          <tr><td><code>application-selector</code></td><td>Native application selector in hero only when it and its original container are not hidden; above sections without a hero</td><td>Slate supplies the real options; never synthesized</td></tr>
+          <tr><td><code>portal-slot--status</code></td><td>Status and next steps, alongside checklist</td><td>We'll see you this fall; Important; Next Steps Checklist</td></tr>
+          <tr><td><code>portal-slot--payments</code></td><td>Payments and activities grid</td><td>Payment Section</td></tr>
+          <tr><td><code>portal-slot--scholarships</code></td><td>Scholarships grid</td><td>Scholarship Award Information</td></tr>
+          <tr><td><code>portal-slot--direct-admit</code></td><td>Direct Admit grid</td><td>Direct Admit notices</td></tr>
+          <tr><td><code>portal-slot--supplemental-materials</code></td><td>Supplemental materials grid</td><td>Portfolio and video interview materials</td></tr>
+          <tr><td><code>portal-slot--future-forward</code></td><td>Future Forward grid</td><td>No dedicated example in the older master</td></tr>
+          <tr><td><code>portal-slot--honors-program</code></td><td>Honors program grid, after Future Forward</td><td>Honors Program Opportunities</td></tr>
+          <tr><td><code>portal-slot--auditions</code></td><td>Auditions grid</td><td>Pre-Audition Screening; recorded audition</td></tr>
+          <tr><td><code>portal-slot--requirements-note</code></td><td>Note above supplemental materials cards</td><td>Theatre Applicants instructions</td></tr>
+          <tr><td><code>portal-slot--requirements</code></td><td>Legacy alias for supplemental materials</td><td>Previously grouped program requirement cards</td></tr>
+          <tr><td><code>portal-slot--housing</code></td><td>Student housing grid</td><td>Update Housing Preference; Update Housing Plans</td></tr>
+          <tr><td><code>portal-slot--attention</code></td><td>Application messages, after housing</td><td>Attention; College Enrollment Questions</td></tr>
+          <tr><td><code>portal-slot--ribbon</code></td><td>Application messages, not the above-hero bar</td><td>System Maintenance; Campus Connect Maintenance</td></tr>
+          <tr><td><code>portal-slot--updates</code></td><td>Application messages</td><td>Reactivation; discontinued application; general updates</td></tr>
+          <tr><td><code>portal-slot--resources</code></td><td>Student resources grid, after housing</td><td>Additional Resources; #DePaulBound</td></tr>
+          <tr><td><code>portal-slot--special</code></td><td>Legacy alias for Direct Admit</td><td>Direct Admit notices</td></tr>
+          <tr><td><code>portal-slot--other</code></td><td>More information fallback grid, last in the left content column below search</td><td>Admission contact; social media survey</td></tr>
+          <tr><td><code>portal-slot--visit</code></td><td>Left content column after main sections, before search</td><td>Preview Days / Visit DePaul</td></tr>
+          <tr><td><code>portal-slot--search</code></td><td>Left content column after visit, before footer</td><td>Find the answers you need</td></tr>
+          <tr><td><code>portal-slot--footer</code></td><td>Custom footer content at the bottom, inside the DePaul footer surface</td><td>Footer links and copyright</td></tr>
+          <tr><td><code>right-rail</code></td><td>Separate right rail; stacks on smaller screens</td><td>Counselor / student information</td></tr>
+          <tr><td><code>portal-ignore</code></td><td>Assembler opt-out; stays in place, hidden by Global Assets CSS</td><td>Code-only parts</td></tr>
+          <tr><td><code>portal-slot--hidden</code></td><td>Hidden content part</td><td>Non-display helper parts</td></tr>
+          <tr><td><code>portal-slot--account</code></td><td>Hidden source for account links used by navigation code</td><td>Account Tools</td></tr>
+          <tr><td>No placement / unrecognized placement</td><td>More information fallback grid</td><td>Other unmatched parts</td></tr>
+        </tbody>
+      </table></div>
+      <p>Navigation is detected from <code>.portal-navbar</code> inside the part; no Slate placement class is required. <code>portal-slot--navigation</code> is optional. The Assembler extracts the inner navbar and hides its original wrapper, keeping navigation outside the content cards. Do not add <code>portal-navbar</code> to the Slate wrapper.</p>
+      <p>Global Assets styles the native address dialog for desktop and full-viewport mobile use. Its Save/Cancel handlers and <code>fw_lazy_commit</code> target stay intact. During an address save, a temporary refresh wrapper recognizes the exact native <code>parent.FW.Refresh();</code> response in the same-origin address commit iframe, closes the active address dialog, and announces the update. Other refresh calls retain Slate behavior. Cancellation, dialog removal, unconfirmed responses, and a two-minute timeout restore the original function; unconfirmed saves never close the dialog or show success. Verify authenticated persistence in Slate after deployment.</p>
+      <p class="note"><strong>Above or below the checklist:</strong> use <code>portal-slot--status</code> and place the part before or after the checklist in Slate. There are no dedicated above/below-checklist classes.</p>
+      <p>Use <code>portal-ignore</code> on code-only parts that the Assembler must not move, group, or add classes to. Global Assets applies <code>display: none !important</code> to remove their visual footprint while leaving the nodes in place. Ordinary scripts still execute; code relying on visible layout measurements, and embedded content such as iframes, may behave differently while hidden. It overrides placement classes and automatic checklist routing; descendant parts are also excluded from discovery. Unlike <code>portal-raw</code>, it skips assembly rather than just presentation. It does not isolate global CSS or other scripts. Set it on the original Slate part before page initialization; deploy both the updated Assembler and Global Assets.</p>
+      <p>Visit and search are self-contained parts inside the main layout's left column, alongside the right rail on desktop. Use <code>portal-slot--visit</code> and <code>portal-slot--search</code>, without <code>portal-action-card</code>. Their existing <code>feature-container</code> and <code>portal-search</code> HTML supplies their appearance; slot classes do not generate content or a form. Parts are moved intact without extra headings or card wrappers. All visit parts follow the main sections, then all search parts, preserving Slate order within each slot. Add <code>hide-empty</code> if needed.</p>
+      <p>Within Student resources only, parts with <code>portal-copy</code> are placed before other resource parts, regardless of Slate's delivered order. Source order is preserved within the copy group and within the remaining resource parts. Other sections are unchanged.</p>
+      <p>More information is the final section in the left content column, below visit and search, alongside the right rail on desktop. Its empty-section hiding and late-content recovery still apply.</p>
+      <p>Section order: Enrollment path, Payments and activities, Scholarships, Direct Admit, Supplemental materials, Future Forward, Honors program, Auditions, Student housing, Application messages, Student resources, More information. Eyebrow labels match these group names. Sections with no parts are omitted; sections containing only empty or hidden parts are hidden and reappear when visible text, media, or controls load. Part nodes are preserved.</p>
+      <p>Application messages groups the <code>portal-slot--attention</code>, <code>portal-slot--ribbon</code>, and <code>portal-slot--updates</code> parts. Parts with no recognized placement go to More information. The above-hero <code>portal-ribbon-part</code> is unchanged. Enrollment-path routing uses <code>portal-slot--status</code>, not <code>portal-section--status</code>.</p>
+      <p>The Assembler moves each <code>portal-slot--footer</code> part after the assembled page content and excludes it from More information. It does not generate a footer; the Slate part is the footer. Set the part's classes to <code>portal-slot--footer portal-raw</code> to avoid a card surface. The <a href="portal-footer-part.html">footer template</a> reproduces the links shown in the current DePaul University website footer; verify destinations and labels before publishing if the official footer changes.</p>
+      <p>Checklist widgets are automatically routed to status. Legacy <code>portal-slot--application-checklist</code> and <code>portal-slot--next-steps-checklist</code> are replaced with <code>portal-slot--status</code>.</p>
+    </section>
+    <section id="appearance">
+      <h2>2. Appearance: Slate CSS Classes field</h2>
+      <p><code>portal-raw</code> preserves the part's HTML and inline styles and skips assembler-added presentation classes, including the automatic right-rail card. Use it with a placement class, instead of message tones, action cards, or custom notices. Page-wide typography and section layout still apply; it does not isolate CSS or remove styles authored inside the HTML.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th scope="col">Class</th><th scope="col">Appearance</th><th scope="col">Matching master element</th></tr></thead>
+        <tbody>
+          <tr><td><code>portal-raw</code></td><td>Untreated HTML; use instead of appearance classes</td><td>Authored HTML without a portal card/message surface</td></tr>
+          <tr><td><code>portal-accordion</code></td><td>Legacy W3 accordion: pale-blue closed headers, navy open headers, chevrons, white panels, keyboard focus outline</td><td>Honors: <code>portal-slot--honors-program portal-accordion</code>. Preserves Liquid and the existing toggle. Remove the widget's old unscoped style block to prevent its button/list rules affecting the entire page; retain content and script.</td></tr>
+          <tr><td><code>portal-copy</code></td><td>Newsreader, Georgia, serif body copy, 1.1875rem / 1.5 line-height, including paragraph links; 1rem top and bottom margins; no card, border, or icon; spans its grid row</td><td>Introductory or explanatory paragraphs</td></tr>
+          <tr><td><code>portal-heading</code></td><td>Rethink Sans heading, 1.75rem / 800 weight / 1.2 line-height, 1rem top and bottom margins; spans its grid row</td><td>Authored content heading</td></tr>
+          <tr><td><code>decision-update</code></td><td>Compact pale-blue callout; Slate's yellow highlighted wrapper becomes transparent with a heavier blue outer border; links stay native</td><td>Slate Status Update widget</td></tr>
+          <tr><td><code>portal-message--info</code></td><td>White, blue accent, information icon</td><td>Reactivation request</td></tr>
+          <tr><td><code>portal-message--success</code></td><td>Pale green, green accent, check icon</td><td>We'll see you this fall</td></tr>
+          <tr><td><code>portal-message--warning</code></td><td>Pale amber, amber accent, warning icon</td><td>College Enrollment Questions; discontinued notice in master</td></tr>
+          <tr><td><code>portal-message--error</code></td><td>Pink/red, red accent, warning icon</td><td>Attention</td></tr>
+          <tr><td><code>portal-message--urgent</code></td><td>Very pale red, red accent, warning icon</td><td>Urgent variant</td></tr>
+          <tr><td><code>portal-message--maintenance</code></td><td>Pale blue, blue accent, wrench icon</td><td>System / Campus Connect Maintenance</td></tr>
+          <tr><td><code>portal-message--note</code></td><td>Compact inline note; combine with a tone</td><td>Important / BlueKey note</td></tr>
+          <tr><td><code>portal-action-card</code></td><td>White, blue accent; hover lift and shadow</td><td>Housing, Honors, Direct Admit, resources</td></tr>
+          <tr><td><code>portal-action-card--arts</code></td><td>Pale blue, navy accent; add to <code>portal-action-card</code></td><td>Audition and portfolio cards</td></tr>
+          <tr><td><code>portal-link-list</code></td><td>Two-column pale-blue pill links with right arrows; darker fill and thin blue border on hover/focus; one column on mobile</td><td>Additional Resources</td></tr>
+          <tr><td><code>portal-scholarship-table</code></td><td>Navy header, striped rows, centered heading, cells and supporting text; accessible column buttons toggle alphabetical name or numeric amount sorting. Non-numeric amounts stay last. Liquid is unchanged.</td><td>Scholarship Award Information</td></tr>
+          <tr><td><code>portal-discontinued</code></td><td>Custom pale-red notice</td><td>Our restyled discontinued block; differs from master's amber version</td></tr>
+          <tr><td><code>portal-direct-admit-closed</code></td><td>Custom amber notice</td><td>Our restyled cohort-full block</td></tr>
+        </tbody>
+      </table></div>
+      <p>Message tones style a plain h1/h2/h3 and body content directly in the part or inside its content div. No base message or heading class is required.</p>
+      <p>All message cards are compact everywhere, including alongside the checklist. Placement does not change message density.</p>
+      <p>For the decision widget, use <code>portal-slot--status decision-update</code> without a message tone or action-card class. The callout appears when a heading or link is present. Empty parts (including a single empty div) are hidden without removing them, so late widget content can still appear.</p>
+      <p>The custom notice classes require their supplied HTML. Do not combine them with a generic tone or action-card class: that can create nested card surfaces.</p>
+    </section>
+    <section id="combinations">
+      <h2>3. Ready-to-paste class combinations</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th scope="col">Desired element</th><th scope="col">Paste into CSS Classes</th></tr></thead>
+        <tbody>
+          <tr><td>Information alongside checklist</td><td><code>portal-slot--status portal-message--info</code></td></tr>
+          <tr><td>Confirmation alongside checklist</td><td><code>portal-slot--status portal-message--success</code></td></tr>
+          <tr><td>Compact BlueKey note</td><td><code>portal-slot--status portal-message--warning portal-message--note</code></td></tr>
+          <tr><td>Untreated HTML in housing</td><td><code>portal-slot--housing portal-raw</code></td></tr>
+          <tr><td>Attention</td><td><code>portal-slot--status portal-message--error</code></td></tr>
+          <tr><td>College Enrollment Questions</td><td><code>portal-slot--status portal-message--warning</code></td></tr>
+          <tr><td>Maintenance in content</td><td><code>portal-slot--status portal-message--maintenance</code></td></tr>
+          <tr><td>Reactivation update</td><td><code>portal-slot--status portal-message--info</code></td></tr>
+          <tr><td>Custom discontinued block</td><td><code>portal-slot--status portal-discontinued</code></td></tr>
+          <tr><td>Custom Direct Admit closed block</td><td><code>portal-slot--direct-admit portal-direct-admit-closed</code></td></tr>
+          <tr><td>Payment card</td><td><code>portal-slot--payments portal-action-card</code></td></tr>
+          <tr><td>Scholarship card</td><td><code>portal-slot--scholarships portal-action-card</code></td></tr>
+          <tr><td>Scholarship award table (existing Liquid HTML)</td><td><code>portal-slot--scholarships portal-scholarship-table</code></td></tr>
+          <tr><td>Supplemental materials card</td><td><code>portal-slot--supplemental-materials portal-action-card portal-action-card--arts</code></td></tr>
+          <tr><td>Future Forward card</td><td><code>portal-slot--future-forward portal-action-card</code></td></tr>
+          <tr><td>Audition card</td><td><code>portal-slot--auditions portal-action-card portal-action-card--arts</code></td></tr>
+          <tr><td>Housing card</td><td><code>portal-slot--housing portal-action-card</code></td></tr>
+          <tr><td>Honors program card</td><td><code>portal-slot--honors-program portal-action-card</code></td></tr>
+          <tr><td>Resource card</td><td><code>portal-slot--resources portal-action-card</code></td></tr>
+          <tr><td>Additional Resources card</td><td><code>portal-slot--resources portal-action-card portal-link-list</code></td></tr>
+          <tr><td>General Direct Admit card</td><td><code>portal-slot--direct-admit portal-action-card</code></td></tr>
+          <tr><td>Counselor block</td><td><code>right-rail</code></td></tr>
+          <tr><td>Above-hero maintenance bar</td><td><code>portal-ribbon-part</code></td></tr>
+        </tbody>
+      </table></div>
+      <p>Basic message HTML:</p>
+      <pre><code>&lt;h3&gt;Message heading&lt;/h3&gt;
+&lt;p&gt;Your message goes here, with &lt;strong&gt;emphasis&lt;/strong&gt; if needed.&lt;/p&gt;</code></pre>
+    </section>
+    <section id="ribbon">
+      <h2>4. Above-hero ribbon: classes inside HTML</h2>
+      <p>Set the part field to <code>portal-ribbon-part</code>. Put the tone on the inner ribbon div, not the part.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th scope="col">HTML class</th><th scope="col">Purpose / master reference</th></tr></thead>
+        <tbody>
+          <tr><td><code>portal-ribbon</code></td><td>Base Scheduled maintenance bar</td></tr>
+          <tr><td><code>portal-ribbon--info</code></td><td>Informational tone, as in Scheduled maintenance</td></tr>
+          <tr><td><code>portal-ribbon--alert</code></td><td>Alert variant</td></tr>
+          <tr><td><code>portal-ribbon--urgent</code></td><td>Urgent variant</td></tr>
+          <tr><td><code>portal-ribbon--celebrate</code></td><td>Celebration variant</td></tr>
+          <tr><td><code>container</code></td><td>Inner width / alignment</td></tr>
+          <tr><td><code>portal-ribbon__body</code></td><td>Message content</td></tr>
+          <tr><td><code>portal-ribbon__close</code></td><td>Dismiss button</td></tr>
+        </tbody>
+      </table></div>
+      <p>Use <a href="portal-ribbon-part.html">the complete ribbon template</a>. Keep <code>role="status"</code> and the dismiss button's accessible label.</p>
+    </section>
+    <section id="components">
+      <h2>5. Other authored HTML classes</h2>
+      <p>These are component building blocks, not destinations. Keep the supplied structure.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th scope="col">Element</th><th scope="col">HTML classes</th><th scope="col">Master reference / template</th></tr></thead>
+        <tbody>
+          <tr><td>Generic message</td><td><code>portal-message</code>, <code>portal-message__title</code></td><td>Manual message components; unnecessary for part tone classes</td></tr>
+          <tr><td>Counselor stack</td><td><code>portal-rail-stack</code></td><td><a href="portal-right-rail-part.html">Right-rail template</a></td></tr>
+          <tr><td>Counselor component</td><td><code>portal-counselor-profile</code></td><td>Your admission counselor</td></tr>
+          <tr><td>Counselor contents</td><td><code>portal-counselor-profile__label</code>, <code>portal-counselor-profile__head</code>, <code>portal-counselor-profile__avatar</code>, <code>portal-counselor-profile__name</code>, <code>portal-counselor-profile__quote</code>, <code>portal-counselor-profile__actions</code>, <code>portal-counselor-profile__contact</code></td><td>Label, initials, name, help text, contact actions</td></tr>
+          <tr><td>Icon-only contact link</td><td><code>portal-icon-btn</code></td><td>Email / phone buttons; supply an accessible label</td></tr>
+          <tr><td>Primary button</td><td><code>btn btn-primary</code></td><td>Schedule / primary actions</td></tr>
+          <tr><td>Outlined button</td><td><code>btn btn-outline-primary</code></td><td>Secondary actions</td></tr>
+          <tr><td>Button arrow</td><td><code>btn-arrow</code></td><td>Portfolio / visit actions; add to a button</td></tr>
+          <tr><td>Hero</td><td><code>portal-domain-hero</code>, <code>portal-domain-hero__inner</code>, <code>portal-domain-hero__title</code>, <code>portal-domain-hero__lead</code></td><td>Master's Welcome back hero</td></tr>
+          <tr><td>Serif hero lead</td><td><code>portal-domain-hero__lead--serif</code></td><td>Hero introductory text</td></tr>
+          <tr><td>Hero with journey</td><td><code>portal-domain-hero__inner--journey</code></td><td>Welcome copy alongside journey</td></tr>
+          <tr><td>Hero eyebrow / facts</td><td><code>portal-kicker</code>, <code>portal-chips</code>, <code>portal-chip</code>, <code>portal-chip__label</code></td><td>Blue Demon Domain; term, major, program</td></tr>
+          <tr><td>Journey</td><td><code>portal-journey</code>, <code>portal-journey__title</code>, <code>portal-journey__steps</code>, <code>portal-journey__dot</code></td><td>Your path to DePaul</td></tr>
+          <tr><td>Journey state</td><td><code>is-done</code>, <code>is-current</code></td><td>Completed/current steps; follow actual applicant data</td></tr>
+          <tr><td>Dynamic Liquid hero</td><td><code>bdd-dynamic-hero</code> and supplied <code>bdd-*</code> child classes</td><td><a href="portal-hero-liquid-part.html">Liquid hero template</a>; separate from master's hero markup</td></tr>
+          <tr><td>Opportunity cards</td><td><code>portal-opportunities-grid</code>, <code>portal-opportunity-card</code>, <code>portal-opportunity-card__image</code>, <code>portal-opportunity-card__content</code>, <code>portal-opportunity-card__title</code>, <code>portal-opportunity-card__description</code>, <code>portal-opportunity-card__buttons</code></td><td>Visit DePaul / Preview Days</td></tr>
+        </tbody>
+      </table></div>
+      <p>Use actual counselor details and links; the template contains sample data. Preserve existing Liquid business logic when restyling content.</p>
+    </section>
+    <section id="automatic">
+      <h2>6. Automatic layout and effects</h2>
+      <p>Do not enter these in the part's class field.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th scope="col">Classes / behavior</th><th scope="col">What handles it</th><th scope="col">Master reference</th></tr></thead>
+        <tbody>
+          <tr><td><code>portal-band</code>, <code>portal-section-header</code>, <code>portal-section-header__eyebrow</code></td><td>Assembler creates only group eyebrow labels, not large titles; authored part headings remain</td><td>Enrollment path; Payments and activities; other groups</td></tr>
+          <tr><td><code>portal-message-stack</code>, <code>portal-message-list</code></td><td>Assembler groups messages</td><td>Status stack; compact messages</td></tr>
+          <tr><td><code>portal-action-grid</code>, <code>portal-action-grid--fit</code></td><td>Assembler groups grid parts</td><td>Housing, resources, requirements</td></tr>
+          <tr><td><code>portal-content-layout</code>, <code>portal-right-rail</code></td><td>Assembler positions sections / rail</td><td>Sections beside counselor</td></tr>
+          <tr><td><code>portal-part</code>, <code>portal-rail-part</code>, <code>portal-rail-card</code>, <code>portal-controller</code></td><td>Assembler bookkeeping / rail layout</td><td>Not message tones</td></tr>
+          <tr><td><code>portal-reveal</code>, <code>is-in</code></td><td>Intersection observer and global CSS</td><td>Sections fade and rise into view</td></tr>
+          <tr><td><code>portal-checklist-status--awaiting</code>, <code>portal-checklist-status--optional</code>, <code>portal-checklist-status--complete</code>, <code>portal-checklist-status--unknown</code></td><td>Global JS reads Slate statuses</td><td>Checklist icons / colors</td></tr>
+          <tr><td><code>portal-application-context</code>, <code>portal-application-context__inner</code>, <code>portal-application-context__label</code>, <code>portal-application-context__value</code>, <code>portal-application-context__select</code></td><td>Global JS moves Slate's real select; creates no options; respects display:none, hidden visibility, and hidden on the select or original container/ancestors, including later changes</td><td>Application dropdown, only when Slate supplies and shows one</td></tr>
+        </tbody>
+      </table></div>
+      <p>Add <code>hide-empty</code> to any assembled portal part or element to hide it when empty, including whitespace, empty wrappers, or helper-only content. Visible text, media, or controls restore it as content loads. For example: <code>submission-conf hide-empty</code>. The assembler manages <code>portal-empty</code>; do not add that class manually. Existing Slate visibility settings are preserved.</p>
+      <p><code>portal-accordion</code> opens the first available panel once by default, including late-loaded widgets. Users can close it normally without it reopening automatically; other panels retain their existing state.</p>
+      <p>For copy beneath the Enrollment path eyebrow, use <code>portal-slot--status portal-copy</code> on a part containing paragraphs, before the checklist/messages in Slate's part order. For a separate heading, use <code>portal-slot--status portal-heading</code> on a part containing an appropriate heading element, such as <code>&lt;h2&gt;Your next steps&lt;/h2&gt;</code>. These classes also work in other slots. They style existing content without inserting text or changing semantics. The heading uses the style guide's h3 visual size, preserving your chosen HTML heading level. Do not combine with card or message-tone classes.</p>
+      <p>Application-message cards slide sideways on hover. Action/opportunity cards lift with a shadow, except the resource list has no outer card or lift. Resource links darken with a blue border and slide 2px on hover; opportunity images zoom. Motion is disabled for visitors requesting reduced motion.</p>
+      <p class="note"><strong>Routing only places content.</strong> Unlike the old master assembler, the current assembler does not add card, heading, or button appearance classes inside content.</p>
+    </section>
+  </main>
+</body>
+</html>
